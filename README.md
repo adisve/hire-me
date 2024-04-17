@@ -1,77 +1,26 @@
-# Interested in working for Famly?
+## 👨‍💻 Description
 
-Give us a chance to see your beautiful code! 🤩
+The code for the UI is divided into a few components.
 
-## How to get started
-- Fork this repository
-- Create a small application in React (or another agreed upon framework)
-- Describe your design decisions and setup instructions in the README.md of the forked repository
+- App.tsx
+- ChildrenList.tsx
+- ChildrenPreview.tsx
+- Error.tsx
+- Loading.tsx
 
-## The assignment
-You are tasked to build a simple application for a nursery to manage the attendance of children each day.
+## 📦 Packages
 
-The application should be able to do 3 things:
-1. List children with some form of pagination/lazy-loading/infinite-scroll
-2. Checkin a child
-3. Checkout a child
+- **[React Router DOM](https://www.npmjs.com/package/react-router-dom)** is implemented in order to navigate between the main page and handle potential UI errors.
+- **[React Bootstrap](https://react-bootstrap.netlify.app/)** is implemented to speed up the dev process.
 
-Don't worry about design or anything like that.
+## 👷🏻‍♂️ Installation
 
-If you have any questions feel free to reach out to the person who sent you the assignment ☺️
+1. Clone the repository
+2. cd into ./app
+3. Run `npm install` to install the dependencies
+4. Run `npm run dev` to start the development server
 
-## API Specification
+## 📝 Notes
 
-You have received an access token in the email that contained the link to this page.
-
-### Fetch some children from
-
-The API does not support any limit or offset, so the pagination/lazy-loading/infinite-scroll will have to be done client-side only.
-
-```
-GET https://app.famly.co/api/daycare/tablet/group
-Arguments: {
-	accessToken: <accessToken>,
-	groupId: '86413ecf-01a1-44da-ba73-1aeda212a196',
-	institutionId: 'dc4bd858-9e9c-4df7-9386-0d91e42280eb'
-}
-```
-
-Example in cURL:
-
-```bash
-curl "https://app.famly.co/api/daycare/tablet/group?accessToken=<accessToken>&groupId=86413ecf-01a1-44da-ba73-1aeda212a196&institutionId=dc4bd858-9e9c-4df7-9386-0d91e42280eb"
-```
-
-### Checkin child
-```
-POST https://app.famly.co/api/v2/children/<childId>/checkins
-
-Arguments: {
-	accessToken: <accessToken>
-	pickupTime: 16:00
-}
-```
-
-Example in cURL:
-
-```bash
-curl \
-  -d 'accessToken=<accessToken>&pickupTime=16:00' \
-  https://app.famly.co/api/v2/children/fcd683d0-bc31-468c-948f-1ca70b91439d/checkins
-```
-
-### Checkout child
-```
-POST https://app.famly.co/api/v2/children/<childId>/checkout
-Arguments: {
-	accessToken: <accessToken>
-}
-```
-
-Example in cURL:
-
-```bash
-curl \
-  -d 'accessToken=<accessToken>' \
-  https://app.famly.co/api/v2/children/fcd683d0-bc31-468c-948f-1ca70b91439d/checkout
-```
+- Network requests are done using axios. Three main functions to fetch all children, as well as two functions for making POST requests in order to check in/out children. These functions are then used in useEffects of the custom hooks.
+- State management is done using reducers in separate files, for separation of concerns. The list of children is initially fetched in its entirety, then loaded lazily in the UI based on the users scroll position.
