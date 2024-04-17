@@ -1,0 +1,11 @@
+.error-route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: var(--body-color);
+    margin-top: 200px;
+    font-family: var(--font-family);
+  }
+}

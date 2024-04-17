@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$background: #fef9ec;
+$primary: #591ab2;
+$font-family: "Montserrat";
+$body-color: #212327;
+
+@import "bootstrap/scss/bootstrap.scss";
+
+:root {
+  --background-color: #{$background};
+  --font-family: #{$font-family};
+  --primary-color: #{$primary};
+  --body-color: #{$body-color};
+
+  font-weight: 400;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  padding: 0px;
+  margin: 0px;
+}
