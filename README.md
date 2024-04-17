@@ -1,6 +1,6 @@
 ## 👨‍💻 Description
 
-The code for the UI is divided into a few components.
+The project was created using [Vite](https://vitejs.dev/). The following UI components handle the frontend:
 
 - App.tsx
 - ChildrenList.tsx
@@ -10,8 +10,9 @@ The code for the UI is divided into a few components.
 
 ## 📦 Packages
 
-- **[React Router DOM](https://www.npmjs.com/package/react-router-dom)** is implemented in order to navigate between the main page and handle potential UI errors.
-- **[React Bootstrap](https://react-bootstrap.netlify.app/)** is implemented to speed up the dev process.
+- **[Axios](https://www.npmjs.com/package/axios)** is used to make API calls.
+- **[React Router DOM](https://www.npmjs.com/package/react-router-dom)** is added in order to route between the main page and handle potential UI errors.
+- **[React Bootstrap](https://react-bootstrap.netlify.app/)** was implemented to speed up the dev process.
 
 ## 👷🏻‍♂️ Installation
 
